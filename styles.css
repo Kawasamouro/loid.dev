@@ -1,118 +1,248 @@
-/* Genel Ayarlar */
-body {
-    background-color: #1e1b29;
-    color: #ffffff;
-    font-family: 'Norwester', sans-serif;
+/* Global Reset and Styles */
+* {
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    text-align: center;
-    overflow-x: hidden; /* Yatay kaydırmayı engellemek için */
+    box-sizing: border-box;
 }
 
-/* Başlık */
+body {
+    background: linear-gradient(135deg, #0f0f17, #1e1b29);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.8;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Glassmorphism Style for Containers */
+.glass-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+/* Header Section */
 header {
-    background-color: #1e1b29;
-    padding: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Modern gölge efekti */
-    position: relative; /* Animasyon için göreceli konum */
-    overflow: hidden; /* İçerikten taşmayı engellemek için */
+    position: relative;
+    text-align: center;
+    background: linear-gradient(135deg, #1e1b29, #3a324c);
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
 }
 
 .header-img {
     width: 100%;
-    height: 500px; /* Daha büyük bir yükseklik belirleyin */
-    object-fit: cover; /* Resmin orantısını koruyarak kapsamasını sağlar */
-    border-bottom: 2px solid #444;
-    transition: transform 0.5s ease-out; /* Kaydırma sırasında animasyon */
+    height: 700px;
+    object-fit: cover;
+    filter: brightness(70%);
+    animation: zoom-in-out 15s infinite alternate ease-in-out;
 }
 
-/* Profil Bölümü */
+@keyframes zoom-in-out {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.15);
+    }
+}
+
+/* Profile Section */
 .profile {
-    margin-top: -50px;
+    position: relative;
+    margin-top: -100px;
+    text-align: center;
 }
 
 .profile-img {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    border: 5px solid #444;
-    width: 163px;
-    height: 163px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Modern gölge efekti */
+    border: 6px solid rgba(130, 216, 247, 0.8);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+    background: #ffffff;
+    overflow: hidden;
+    transition: transform 0.6s ease, box-shadow 0.4s ease;
 }
 
+.profile-img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 1);
+}
+
+.profile h1 {
+    font-size: 3em;
+    color: #82d8f7;
+    margin-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+.profile h2 {
+    font-size: 1.8em;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 10px;
+}
+
+/* Highlighted Text */
 .highlight {
     color: #82d8f7;
-    font-weight: bold; /* Vurgulama için kalın yazı tipi */
+    font-weight: bold;
+    text-shadow: 0 2px 5px rgba(130, 216, 247, 0.6);
 }
 
-.emoji {
-    font-size: 1.2em;
-}
-
-/* Açıklama */
+/* Description Section */
 .description {
-    max-width: 600px;
-    margin: 10px auto;
-    font-size: 1.1em; /* Daha okunabilir metin */
+    max-width: 900px;
+    margin: 30px auto;
+    font-size: 1.2em;
+    color: #d1d1d1;
+    text-align: center;
+    line-height: 1.8;
+    padding: 0 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* About ve Contact Bölümleri */
-.about, .contact {
-    background-color: #272135;
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 800px;
-    border-radius: 12px; /* Daha pürüzsüz kenar yuvarlamaları */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Modern gölge efekti */
-}
-
-/* Başlık Renkleri */
-.about h2, .contact h2 {
+/* Section Titles */
+section h2 {
+    font-size: 3em;
     color: #82d8f7;
-    font-size: 2em; /* Daha büyük başlıklar */
-    margin-bottom: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 5px 15px rgba(130, 216, 247, 0.8);
 }
 
-/* Liste Stil Ayarları */
-.about ul, .contact ul {
+/* Content Lists */
+section ul {
     list-style: none;
     padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
 }
 
-.about ul li, .contact ul li {
-    margin: 10px 0;
-    font-size: 1.1em; /* Daha okunabilir liste öğeleri */
+section ul li {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Bağlantılar */
-.about a, .contact a {
+section ul li:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8);
+}
+
+/* Links and Buttons */
+a {
     color: #82d8f7;
     text-decoration: none;
-    font-weight: bold; /* Kalın yazı tipi */
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    position: relative;
+    z-index: 10;
     display: inline-block;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: all 0.3s ease; /* Daha pürüzsüz geçişler */
 }
 
-.about a:hover, .contact a:hover {
-    background-color: #555; /* Buton üzerine gelindiğinde arka plan rengi değişir */
-    color: #fff;
-    text-decoration: none;
-    transform: scale(1.05); /* Buton üzerine gelindiğinde büyüme efekti */
+a:hover {
+    color: #ffffff;
+    text-shadow: 0 3px 8px rgba(130, 216, 247, 0.8);
 }
 
-/* Ekstra Bilgi */
-.extra-info {
-    font-style: italic;
-    margin-top: 10px;
-    font-size: 1.1em; /* Daha okunabilir metin */
+a:focus {
+    outline: 2px dashed #82d8f7;
 }
 
-/* GIF resmi stili */
+button {
+    background: linear-gradient(135deg, #82d8f7, #68b0d8);
+    color: #1e1b29;
+    font-size: 1.2em;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #68b0d8, #5a9ec3);
+    transform: scale(1.1);
+}
+
+/* Contact Section */
+.contact {
+    background: rgba(39, 33, 53, 0.95);
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 12px;
+    border: none;
+    background: rgba(30, 27, 41, 0.9);
+    color: #ffffff;
+    font-size: 1em;
+    outline: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.3s ease;
+}
+
+.contact input:focus, .contact textarea:focus {
+    box-shadow: 0 0 15px #82d8f7;
+}
+
+.contact button {
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Extra Animations */
+.emoji {
+    font-size: 2em;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 .gif-image {
-    width: 50px; /* GIF boyutunu ayarlayın */
+    width: 70px;
     height: auto;
-    vertical-align: middle; /* Metinle hizalamak için */
-    margin-left: 1px; /* Metin ile GIF arasına boşluk eklemek için */
+    margin-left: 10px;
+    vertical-align: middle;
+    animation: fade-in 2s ease-in-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
