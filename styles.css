@@ -1,0 +1,118 @@
+/* Genel Ayarlar */
+body {
+    background-color: #1e1b29;
+    color: #ffffff;
+    font-family: 'Norwester', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    text-align: center;
+    overflow-x: hidden; /* Yatay kaydırmayı engellemek için */
+}
+
+/* Başlık */
+header {
+    background-color: #1e1b29;
+    padding: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Modern gölge efekti */
+    position: relative; /* Animasyon için göreceli konum */
+    overflow: hidden; /* İçerikten taşmayı engellemek için */
+}
+
+.header-img {
+    width: 100%;
+    height: 500px; /* Daha büyük bir yükseklik belirleyin */
+    object-fit: cover; /* Resmin orantısını koruyarak kapsamasını sağlar */
+    border-bottom: 2px solid #444;
+    transition: transform 0.5s ease-out; /* Kaydırma sırasında animasyon */
+}
+
+/* Profil Bölümü */
+.profile {
+    margin-top: -50px;
+}
+
+.profile-img {
+    border-radius: 50%;
+    border: 5px solid #444;
+    width: 163px;
+    height: 163px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Modern gölge efekti */
+}
+
+.highlight {
+    color: #82d8f7;
+    font-weight: bold; /* Vurgulama için kalın yazı tipi */
+}
+
+.emoji {
+    font-size: 1.2em;
+}
+
+/* Açıklama */
+.description {
+    max-width: 600px;
+    margin: 10px auto;
+    font-size: 1.1em; /* Daha okunabilir metin */
+}
+
+/* About ve Contact Bölümleri */
+.about, .contact {
+    background-color: #272135;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    border-radius: 12px; /* Daha pürüzsüz kenar yuvarlamaları */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Modern gölge efekti */
+}
+
+/* Başlık Renkleri */
+.about h2, .contact h2 {
+    color: #82d8f7;
+    font-size: 2em; /* Daha büyük başlıklar */
+    margin-bottom: 10px;
+}
+
+/* Liste Stil Ayarları */
+.about ul, .contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about ul li, .contact ul li {
+    margin: 10px 0;
+    font-size: 1.1em; /* Daha okunabilir liste öğeleri */
+}
+
+/* Bağlantılar */
+.about a, .contact a {
+    color: #82d8f7;
+    text-decoration: none;
+    font-weight: bold; /* Kalın yazı tipi */
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Daha pürüzsüz geçişler */
+}
+
+.about a:hover, .contact a:hover {
+    background-color: #555; /* Buton üzerine gelindiğinde arka plan rengi değişir */
+    color: #fff;
+    text-decoration: none;
+    transform: scale(1.05); /* Buton üzerine gelindiğinde büyüme efekti */
+}
+
+/* Ekstra Bilgi */
+.extra-info {
+    font-style: italic;
+    margin-top: 10px;
+    font-size: 1.1em; /* Daha okunabilir metin */
+}
+
+/* GIF resmi stili */
+.gif-image {
+    width: 50px; /* GIF boyutunu ayarlayın */
+    height: auto;
+    vertical-align: middle; /* Metinle hizalamak için */
+    margin-left: 1px; /* Metin ile GIF arasına boşluk eklemek için */
+}
