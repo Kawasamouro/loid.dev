@@ -1,4 +1,24 @@
+/* Profile Section Adjustment */
+.profile {
+    margin-top: -150px; /* Daha fazla yukarı çekmek için değeri artır */
+}
 
+/* Content Box Alignment */
+section ul li {
+    padding: 20px;
+    margin: 10px; /* Kenar boşluklarını azalt */
+}
+
+/* Responsive Fix for Mobile */
+@media (max-width: 768px) {
+    .profile {
+        margin-top: -120px; /* Mobil için yukarıda optimize */
+    }
+    section ul li {
+        padding: 15px;
+        margin: 5px;
+    }
+}
 /* Global Reset and Styles */
 * {
     margin: 0;
@@ -58,6 +78,7 @@ header {
     position: relative;
     margin-top: -100px;
     text-align: center;
+
 }
 
 .profile-img {
@@ -232,9 +253,9 @@ button:hover {
 }
 
 .gif-image {
-    width: 1080px;
+    width: 70px;
     height: auto;
-    margin-left: 10px;
+    margin-left: 8px;
     vertical-align: middle;
     animation: fade-in 2s ease-in-out;
 }
