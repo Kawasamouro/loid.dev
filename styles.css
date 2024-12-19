@@ -1,25 +1,18 @@
-/* Profile Section Adjustment */
-.profile {
-    margin-top: -150px; /* Daha fazla yukarı çekmek için değeri artır */
+/* ===================== Global Reset and Variables ===================== */
+:root {
+    --primary-color: #82d8f7;
+    --secondary-color: #68b0d8;
+    --bg-color-dark: #1e1b29;
+    --bg-color-light: rgba(255, 255, 255, 0.1);
+    --text-color-light: #ffffff;
+    --text-color-muted: rgba(255, 255, 255, 0.8);
+    --border-radius: 16px;
+    --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    --transition-fast: 0.3s ease;
+    --transition-slow: 0.6s ease;
+    --font-primary: 'Poppins', sans-serif;
 }
 
-/* Content Box Alignment */
-section ul li {
-    padding: 20px;
-    margin: 10px; /* Kenar boşluklarını azalt */
-}
-
-/* Responsive Fix for Mobile */
-@media (max-width: 768px) {
-    .profile {
-        margin-top: -120px; /* Mobil için yukarıda optimize */
-    }
-    section ul li {
-        padding: 15px;
-        margin: 5px;
-    }
-}
-/* Global Reset and Styles */
 * {
     margin: 0;
     padding: 0;
@@ -27,33 +20,57 @@ section ul li {
 }
 
 body {
-    background: linear-gradient(135deg, #0f0f17, #1e1b29);
-    color: #ffffff;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
     line-height: 1.8;
-    overflow-x: hidden;
+    color: var(--text-color-light);
+    background: linear-gradient(135deg, #0f0f17, var(--bg-color-dark));
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
-/* Glassmorphism Style for Containers */
+/* ===================== Utility Classes ===================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.shadow {
+    box-shadow: var(--box-shadow);
+}
+
+.transition {
+    transition: var(--transition-fast);
+}
+
+/* ===================== Glassmorphism Style ===================== */
 .glass-container {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--bg-color-light);
     backdrop-filter: blur(15px);
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 20px;
-    margin: 20px auto;
-    max-width: 1200px;
+    box-shadow: var(--box-shadow);
 }
 
-/* Header Section */
+/* ===================== Header Section ===================== */
 header {
-    position: relative;
     text-align: center;
     background: linear-gradient(135deg, #1e1b29, #3a324c);
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    position: relative;
 }
 
 .header-img {
@@ -73,23 +90,21 @@ header {
     }
 }
 
-/* Profile Section */
+/* ===================== Profile Section ===================== */
 .profile {
-    position: relative;
     margin-top: -100px;
     text-align: center;
-
 }
 
 .profile-img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    border: 6px solid rgba(130, 216, 247, 0.8);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
-    background: #ffffff;
+    border: 6px solid var(--primary-color);
+    background: var(--text-color-light);
+    box-shadow: var(--box-shadow);
     overflow: hidden;
-    transition: transform 0.6s ease, box-shadow 0.4s ease;
+    transition: transform var(--transition-slow), box-shadow var(--transition-fast);
 }
 
 .profile-img:hover {
@@ -98,8 +113,8 @@ header {
 }
 
 .profile h1 {
-    font-size: 3em;
-    color: #82d8f7;
+    font-size: 3rem;
+    color: var(--primary-color);
     margin-top: 15px;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -107,43 +122,36 @@ header {
 }
 
 .profile h2 {
-    font-size: 1.8em;
+    font-size: 1.8rem;
     font-weight: 300;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-color-muted);
     margin-top: 10px;
 }
 
-/* Highlighted Text */
-.highlight {
-    color: #82d8f7;
-    font-weight: bold;
-    text-shadow: 0 2px 5px rgba(130, 216, 247, 0.6);
-}
-
-/* Description Section */
+/* ===================== Description Section ===================== */
 .description {
     max-width: 900px;
     margin: 30px auto;
-    font-size: 1.2em;
-    color: #d1d1d1;
+    font-size: 1.2rem;
     text-align: center;
     line-height: 1.8;
     padding: 0 20px;
+    color: #d1d1d1;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* Section Titles */
+/* ===================== Section Titles ===================== */
 section h2 {
-    font-size: 3em;
-    color: #82d8f7;
-    text-align: center;
-    margin-bottom: 30px;
+    font-size: 3rem;
+    color: var(--primary-color);
     text-transform: uppercase;
     letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
     text-shadow: 0 5px 15px rgba(130, 216, 247, 0.8);
 }
 
-/* Content Lists */
+/* ===================== Content Lists ===================== */
 section ul {
     list-style: none;
     padding: 0;
@@ -154,12 +162,12 @@ section ul {
 }
 
 section ul li {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--bg-color-light);
     backdrop-filter: blur(10px);
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 section ul li:hover {
@@ -167,51 +175,46 @@ section ul li:hover {
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8);
 }
 
-/* Links and Buttons */
+/* ===================== Links and Buttons ===================== */
 a {
-    color: #82d8f7;
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
     position: relative;
     z-index: 10;
-    display: inline-block;
+    transition: color var(--transition-fast), text-shadow var(--transition-fast);
 }
 
 a:hover {
-    color: #ffffff;
+    color: var(--text-color-light);
     text-shadow: 0 3px 8px rgba(130, 216, 247, 0.8);
 }
 
-a:focus {
-    outline: 2px dashed #82d8f7;
-}
-
 button {
-    background: linear-gradient(135deg, #82d8f7, #68b0d8);
-    color: #1e1b29;
-    font-size: 1.2em;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--bg-color-dark);
+    font-size: 1.2rem;
     padding: 12px 25px;
     border: none;
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
+    transition: transform var(--transition-fast), background var(--transition-fast);
 }
 
 button:hover {
-    background: linear-gradient(135deg, #68b0d8, #5a9ec3);
     transform: scale(1.1);
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
 }
 
-/* Contact Section */
+/* ===================== Contact Section ===================== */
 .contact {
     background: rgba(39, 33, 53, 0.95);
-    color: #ffffff;
+    color: var(--text-color-light);
     border: 2px solid rgba(255, 255, 255, 0.2);
     padding: 50px;
-    border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }
 
 .contact input, .contact textarea {
@@ -221,15 +224,15 @@ button:hover {
     border-radius: 12px;
     border: none;
     background: rgba(30, 27, 41, 0.9);
-    color: #ffffff;
-    font-size: 1em;
+    color: var(--text-color-light);
+    font-size: 1rem;
     outline: none;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow var(--transition-fast);
 }
 
 .contact input:focus, .contact textarea:focus {
-    box-shadow: 0 0 15px #82d8f7;
+    box-shadow: 0 0 15px var(--primary-color);
 }
 
 .contact button {
@@ -237,9 +240,9 @@ button:hover {
     width: 100%;
 }
 
-/* Extra Animations */
+/* ===================== Animations ===================== */
 .emoji {
-    font-size: 2em;
+    font-size: 2rem;
     animation: bounce 1.5s infinite;
 }
 
