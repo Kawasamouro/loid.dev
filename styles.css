@@ -1,273 +1,105 @@
-/* ===================== Global Reset and Variables ===================== */
-:root {
-    --primary-color: #82d8f7;
-    --secondary-color: #68b0d8;
-    --bg-color-dark: #1e1b29;
-    --bg-color-light: rgba(255, 255, 255, 0.1);
-    --text-color-light: #ffffff;
-    --text-color-muted: rgba(255, 255, 255, 0.8);
-    --border-radius: 16px;
-    --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-    --transition-fast: 0.3s ease;
-    --transition-slow: 0.6s ease;
-    --font-primary: 'Poppins', sans-serif;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: var(--font-primary);
-    line-height: 1.8;
-    color: var(--text-color-light);
-    background: linear-gradient(135deg, #0f0f17, var(--bg-color-dark));
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
 }
 
-/* ===================== Utility Classes ===================== */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.profile-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 15px;
     padding: 20px;
-}
-
-.text-center {
+    width: 300px;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.mt-20 {
-    margin-top: 20px;
+.profile-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
 }
 
-.mb-20 {
+.profile-card h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.profile-card p {
+    font-size: 14px;
     margin-bottom: 20px;
 }
 
-.shadow {
-    box-shadow: var(--box-shadow);
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
-.transition {
-    transition: var(--transition-fast);
+.icons a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    transition: transform 0.3s;
 }
 
-/* ===================== Glassmorphism Style ===================== */
-.glass-container {
-    background: var(--bg-color-light);
-    backdrop-filter: blur(15px);
-    border-radius: var(--border-radius);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 20px;
-    box-shadow: var(--box-shadow);
+.icons a img {
+    width: 30px; /* Resmin boyutunu ayarladım */
+    height: 28px; /* Resmin boyutunu ayarladım */
 }
 
-/* ===================== Header Section ===================== */
-header {
-    text-align: center;
-    background: linear-gradient(135deg, #1e1b29, #3a324c);
-    overflow: hidden;
-    position: relative;
+.icons a:hover {
+    transform: scale(1.2);
 }
 
-.header-img {
-    width: 100%;
-    height: 700px;
-    object-fit: cover;
-    filter: brightness(70%);
-    animation: zoom-in-out 15s infinite alternate ease-in-out;
+body {
+    margin: 0;
+    padding: 0;
+    cursor: none; /* Varsayılan fare imlecini gizler */
 }
 
-@keyframes zoom-in-out {
+* {
+    cursor: none; /* Varsayılan cursoru tamamen kapat */
+}
+
+a, button {
+    cursor: none; /* Tıklanabilir öğeler için de cursoru kapat */
+}
+
+.snowflake {
+    position: absolute;
+    color: white;
+    font-size: 1em;
+    animation: fall linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fall {
     0% {
-        transform: scale(1);
+        transform: translateY(-100%);
     }
     100% {
-        transform: scale(1.15);
-    }
-}
-
-/* ===================== Profile Section ===================== */
-.profile {
-    margin-top: -100px;
-    text-align: center;
-}
-
-.profile-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 6px solid var(--primary-color);
-    background: var(--text-color-light);
-    box-shadow: var(--box-shadow);
-    overflow: hidden;
-    transition: transform var(--transition-slow), box-shadow var(--transition-fast);
-}
-
-.profile-img:hover {
-    transform: scale(1.15);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 1);
-}
-
-.profile h1 {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-top: 15px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
-}
-
-.profile h2 {
-    font-size: 1.8rem;
-    font-weight: 300;
-    color: var(--text-color-muted);
-    margin-top: 10px;
-}
-
-/* ===================== Description Section ===================== */
-.description {
-    max-width: 900px;
-    margin: 30px auto;
-    font-size: 1.2rem;
-    text-align: center;
-    line-height: 1.8;
-    padding: 0 20px;
-    color: #d1d1d1;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-}
-
-/* ===================== Section Titles ===================== */
-section h2 {
-    font-size: 3rem;
-    color: var(--primary-color);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-align: center;
-    margin-bottom: 30px;
-    text-shadow: 0 5px 15px rgba(130, 216, 247, 0.8);
-}
-
-/* ===================== Content Lists ===================== */
-section ul {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-
-section ul li {
-    background: var(--bg-color-light);
-    backdrop-filter: blur(10px);
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: var(--box-shadow);
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-section ul li:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8);
-}
-
-/* ===================== Links and Buttons ===================== */
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: bold;
-    position: relative;
-    z-index: 10;
-    transition: color var(--transition-fast), text-shadow var(--transition-fast);
-}
-
-a:hover {
-    color: var(--text-color-light);
-    text-shadow: 0 3px 8px rgba(130, 216, 247, 0.8);
-}
-
-button {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: var(--bg-color-dark);
-    font-size: 1.2rem;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform var(--transition-fast), background var(--transition-fast);
-}
-
-button:hover {
-    transform: scale(1.1);
-    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-}
-
-/* ===================== Contact Section ===================== */
-.contact {
-    background: rgba(39, 33, 53, 0.95);
-    color: var(--text-color-light);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    padding: 50px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-}
-
-.contact input, .contact textarea {
-    width: 100%;
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 12px;
-    border: none;
-    background: rgba(30, 27, 41, 0.9);
-    color: var(--text-color-light);
-    font-size: 1rem;
-    outline: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    transition: box-shadow var(--transition-fast);
-}
-
-.contact input:focus, .contact textarea:focus {
-    box-shadow: 0 0 15px var(--primary-color);
-}
-
-.contact button {
-    margin-top: 20px;
-    width: 100%;
-}
-
-/* ===================== Animations ===================== */
-.emoji {
-    font-size: 2rem;
-    animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-.gif-image {
-    width: 70px;
-    height: auto;
-    margin-left: 8px;
-    vertical-align: middle;
-    animation: fade-in 2s ease-in-out;
-}
-
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
+        transform: translateY(100%);
     }
 }
