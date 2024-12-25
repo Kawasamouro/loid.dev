@@ -10,14 +10,15 @@ body, html {
     overflow: hidden;
 }
 
-.background-video {
-    position: fixed;
+.background-image {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    z-index: -1;
+    background-image: url('2151779607.jpg');
+    background-size: cover; /* Görselin tam ekran olmasını sağlar */
+    background-position: center; /* Görseli ortalar */
 }
 
 .profile-card {
@@ -66,7 +67,7 @@ body, html {
 
 .icons a img {
     width: 30px; /* Resmin boyutunu ayarladım */
-    height: 28px; /* Resmin boyutunu ayarladım */
+    height: 25px; /* Resmin boyutunu ayarladım */
 }
 
 .icons a:hover {
